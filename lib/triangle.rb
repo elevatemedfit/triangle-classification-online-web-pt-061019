@@ -8,9 +8,8 @@ def initialize(side1, side2, side3)
   @side3 = side3
 end
 
- def kind?(side1,side2,side3)
-    if (@side1 + @side2 >= @side3 && @side2 + @side3 >= @side1 && @side3 + @side1 >= @side2)  # ||
-       #(side1 <= 0 || side2 <= 0 || side3 <= 0)
+ def kind?(a,b,c)
+ if (a + b > c && a + c > b && b + c > a) == false
       begin
         raise TriangleError
         rescue TriangleError => error
