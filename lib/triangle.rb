@@ -13,13 +13,13 @@ end
       begin
         raise TriangleError
         rescue TriangleError => error
-        puts error.message 
+        puts error.message
         end
     if (side1 <= 0 || side2 <= 0 || side3 <= 0)
       begin
         raise TriangleError
         rescue TriangleError => error
-        puts error.message 
+        puts error.message
   else
 
   # def triangle(a,b,c)
