@@ -6,9 +6,8 @@ class Triangle
     @side3 = side3
   end#
 
-   def kind(a,b,c)
-     sides = [a,b,c].sort
-      if sides.first <= 0 || sides[2] >= sides[1] + sides[0]
+   def kind(side1,side2,side3)
+      if (@side1 + @side2 >= @side3 && @side2 + @side3 >= @side1 && @side3 + @side1 >= @side2) !=true
     begin
         raise PartnerError
     rescue PartnerError => error
@@ -17,8 +16,8 @@ class Triangle
   else
     # def triangle(a,b,c)
     #   sides = [a,b,c].sort
-      return :equilateral if sides.uniq.length  == 1
-      return :isosceles if sides.uniq.length  == 2
+      return :equilateral if @side1 == @side2 && @side2 == @side3
+      return :isosceles if @side1 == @side2 || @side2 == @side3 || @side1 == @side3
       :scalene
 end
 end
