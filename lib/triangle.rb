@@ -30,12 +30,13 @@ class Triangle
       end
     end
 
-  end
+  
 
 
 
-class TriangleError < StandardError
-def message
-   "Triangle Error"
-  end
+    class TriangleError < StandardError
+        def message
+          "Triangle Error"
+        end
+    end
 end
