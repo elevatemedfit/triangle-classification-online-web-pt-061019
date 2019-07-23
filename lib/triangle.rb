@@ -16,7 +16,7 @@ class Triangle
       puts error.message
     end
   else
-    def triangle
+    def find_triangle
     kind.each do |a,b,c|
       if a == b && b == c
         puts "equilateral"
