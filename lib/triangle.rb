@@ -29,3 +29,4 @@ class TriangleError < StandardError
     "TriangleError"
   # triangle error code
 end
+end
