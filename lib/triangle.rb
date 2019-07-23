@@ -9,7 +9,7 @@ class Triangle
   end#
 
    def kind(side1,side2,side3)
-      if (side1+side2> side3 and side2+side3> side1 and side3+side1> side2) != true
+      if sides.first <= 0 || sides[2] >= sides[1] + sides[0]
     begin
         raise PartnerError
     rescue PartnerError => error
@@ -18,8 +18,6 @@ class Triangle
   else
     def triangle(a, b, c)
   sides = [a,b,c].sort
-
-  raise TriangleError if sides.first <= 0 || sides[2] >= sides[1] + sides[0]
   return :equilateral if sides.uniq.length  == 1
   return :isosceles if sides.uniq.length  == 2
   :scalene
