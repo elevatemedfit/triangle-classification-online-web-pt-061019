@@ -16,14 +16,18 @@ class Triangle
       puts error.message
     end
   else
-    def kind.each do |side1,side2,side|
-      if side1 == side2 && side2 == side3
+    def triangle(kind)
+    kind.each do |a,b,c|
+      if a == b && b == c
         puts "equilateral"
-      elsif side1 == side2 || side2 == side3 || side1 == side3
+      elsif a == b || b == c || a == c
         puts "isosceles"
-      elsif side1 != side2 && side1 != side3 && side2 != side3
+      elsif a != b && a != c && b != c
         puts "scalene"
    end
+ end
+ end
+ end
  end
 
  class PartnerError < StandardError
