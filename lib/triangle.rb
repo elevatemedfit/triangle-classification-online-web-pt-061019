@@ -16,19 +16,16 @@ class Triangle
       puts error.message
     end
   else
-    def find_triangle
-    kind.each do |a,b,c|
-      if a == b && b == c
-        puts "equilateral"
-      elsif a == b || b == c || a == c
-        puts "isosceles"
-      elsif a != b && a != c && b != c
-        puts "scalene"
-   end
- end
- end
- end
- end
+    def triangle(a, b, c)
+  sides = [a,b,c].sort
+
+  raise TriangleError if sides.first <= 0 || sides[2] >= sides[1] + sides[0]
+  return :equilateral if sides.uniq.length  == 1
+  return :isosceles if sides.uniq.length  == 2
+  :scalene
+end
+end
+end
 
  class PartnerError < StandardError
    def message
