@@ -6,12 +6,18 @@ class Triangle
   end
 
   def kind()
-    if  #(@side_1 + @side_2 > @side_3) || (@side_2 + @side_3 > @side_1) || (@side_3 + @side_1 > @side_2) #(@side_1 <= 0) || (@side_2 <= 0) || (@side_3 <= 0)
-      begin #|| (@side_1+@side_2 <= @side_3) || (@side_1+@side_3 <= @side_2) || (@side_2+@side_3 <= @side_1)
+    if (@side_1 <= 0) || (@side_2 <= 0) || (@side_3 <= 0)
+    begin
       raise TriangleError
-    rescue TriangleError => error
+      rescue TriangleError => error
       puts error.message
-    end
+      end
+    elsif (@side_1+@side_2 <= @side_3) || (@side_1+@side_3 <= @side_2) || (@side_2+@side_3 <= @side_1)
+      begin
+      raise TriangleError
+      rescue TriangleError => error
+      puts error.message
+      end
     else
       if (@side_1 == @side_2) && (@side_2 == @side_3)
         :equilateral
@@ -21,13 +27,13 @@ class Triangle
         :scalene
       end
     end
-end
-end
 
+  end
 
+end
 
 class TriangleError < StandardError
-  def message
-    "TriangleError"
+def message
+   "Triangle Error"
   end
 end
