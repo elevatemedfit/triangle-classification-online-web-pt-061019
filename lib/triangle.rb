@@ -17,14 +17,14 @@ class Triangle
       puts error.message
     end
   else
-    def triangle(a,b,c)
-      sides = [a,b,c].sort
+    # def triangle(a,b,c)
+    #   sides = [a,b,c].sort
       return :equilateral if sides.uniq.length  == 1
       return :isosceles if sides.uniq.length  == 2
       :scalene
 end
 end
-end
+
 
 
  class PartnerError < StandardError
